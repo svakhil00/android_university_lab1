@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -62,7 +61,7 @@ public class BestSellerBooksFragment extends Fragment implements OnListFragmentI
             @Override
             public void onSuccess(List<BestSellerBook> models) {
                 progressBar.hide();
-                recyclerView.setAdapter(new BestSellerBooksRecyclerViewAdapter(models, BestSellerBooksFragment.this));
+                recyclerView.setAdapter(new BestSellerBooksRecyclerViewAdapter(models, BestSellerBooksFragment.this, rank, bookDescription));
                 Log.d("BestSellerBooksFragment", "response successful");
             }
 
